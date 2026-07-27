@@ -262,18 +262,103 @@
   }
   .flow-text{font-size:13px;}
   .flow-text strong{display:block; font-size:14px; margin-bottom:2px;}
+
+  /* FLOATING WHATSAPP */
+  .float-whatsapp{
+    position:fixed;
+    bottom:24px; right:24px;
+    width:58px; height:58px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+    z-index:999;
+    text-decoration:none;
+    animation:pulse-wa 2.4s ease-in-out infinite;
+  }
+  .float-whatsapp svg{width:28px; height:28px; fill:#fff;}
+  @keyframes pulse-wa{
+    0%,100%{box-shadow:0 4px 14px rgba(0,0,0,0.25), 0 0 0 0 rgba(37,211,102,0.5);}
+    50%{box-shadow:0 4px 14px rgba(0,0,0,0.25), 0 0 0 10px rgba(37,211,102,0);}
+  }
+  .float-label{
+    position:fixed; bottom:38px; right:90px;
+    background:var(--ink); color:#fff; font-size:12px; font-weight:600;
+    padding:6px 12px; border-radius:6px; z-index:998;
+    white-space:nowrap; opacity:0; pointer-events:none;
+    transition:opacity 0.3s;
+  }
+  .float-whatsapp:hover + .float-label{opacity:1;}
+
+  /* PROMPT IDEA TYPEWRITER */
+  .prompt-idea-strip{
+    margin-top:28px;
+    background:rgba(247,245,239,0.08);
+    border:1px solid rgba(247,245,239,0.25);
+    border-radius:10px;
+    padding:14px 18px;
+    max-width:560px;
+  }
+  .prompt-idea-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--chalk-yellow);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    margin-bottom:6px;
+  }
+  .prompt-idea-text{
+    font-family:'JetBrains Mono', monospace;
+    font-size:14px;
+    color:#F7F5EF;
+    min-height:20px;
+  }
+  .prompt-idea-text .cursor{
+    display:inline-block; width:2px; height:14px; background:var(--chalk-yellow);
+    margin-left:2px; vertical-align:middle;
+    animation:blink 0.9s step-end infinite;
+  }
+  @keyframes blink{50%{opacity:0;}}
+  .type-cursor{
+    display:inline-block; width:2px; height:13px; background:var(--board-green);
+    margin-left:1px; vertical-align:text-bottom;
+    animation:blink 0.9s step-end infinite;
+  }
+
+  /* CERTIFICATE GALLERY */
+  .cert-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:16px;
+  }
+  @media (max-width:760px){ .cert-grid{grid-template-columns:repeat(2,1fr);} }
+  .cert-card{
+    border:1px solid var(--card-border); border-radius:12px; overflow:hidden;
+    background:#fff; text-decoration:none; color:var(--ink); display:block;
+    transition:transform 0.15s, box-shadow 0.15s;
+  }
+  .cert-card:hover{transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.08);}
+  .cert-thumb{
+    width:100%; aspect-ratio:4/3; object-fit:cover; object-position:top;
+    border-bottom:1px solid var(--card-border); background:var(--chalk-bg);
+  }
+  .cert-caption{padding:10px 12px;}
+  .cert-caption .issuer{font-weight:600; font-size:13px;}
+  .cert-caption .program{font-size:11px; color:var(--muted); margin-top:2px;}
 </style>
 </head>
 <body>
 
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Classmiss.in</span>
-    <h1>Certified in AI for education. Here to show you what actually works.</h1>
-    <p>I'm certified by CBSE and Intel, Microsoft, and Google for Education in AI for teaching — and I use these tools daily for real work, not just to pass an exam. I built Classmiss to show teachers the exact same things, hands-on, in a single session.</p>
+    <span class="eyebrow">Classmiss.in — Practical AI training for teachers</span>
+    <h1>Become the AI-confident teacher in your school.</h1>
+    <p>No more late nights making worksheets. In one hands-on session, you'll learn to create quizzes, mind maps and posters with AI — the same tools I use every day in my own teaching. I'm a qualified teacher (MA, B.Ed) certified in AI for education by CBSE, Intel, Microsoft, and Google for Education.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#course">Join the course</a>
       <a class="btn btn-ghost" href="#usecases">See what you'll learn</a>
+    </div>
+    <div class="prompt-idea-strip">
+      <div class="prompt-idea-label">Try a prompt like this</div>
+      <div class="prompt-idea-text" id="typewriter"><span id="tw-text"></span><span class="cursor"></span></div>
     </div>
   </div>
 </section>
@@ -281,19 +366,35 @@
 <section class="section" style="padding:40px 0;">
   <div class="wrap">
     <div class="section-label" style="text-align:center;">Certified by</div>
-    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:12px;">
-      <div style="border:1px solid var(--card-border); border-radius:10px; padding:14px 20px; text-align:center; min-width:180px;">
-        <div style="font-weight:600; font-size:14px;">CBSE &amp; Intel</div>
-        <div style="font-size:12px; color:var(--muted);">AI For All — Aware &amp; Appreciate</div>
-      </div>
-      <div style="border:1px solid var(--card-border); border-radius:10px; padding:14px 20px; text-align:center; min-width:180px;">
-        <div style="font-weight:600; font-size:14px;">Microsoft &amp; Skill India</div>
-        <div style="font-size:12px; color:var(--muted);">SOAR — AI for Educators, NSQF Level 6</div>
-      </div>
-      <div style="border:1px solid var(--card-border); border-radius:10px; padding:14px 20px; text-align:center; min-width:180px;">
-        <div style="font-weight:600; font-size:14px;">Google for Education</div>
-        <div style="font-size:12px; color:var(--muted);">Gemini Certified Educator</div>
-      </div>
+    <div class="cert-grid">
+      <a class="cert-card" href="certs/ai-aware-cbse-intel.png" target="_blank" rel="noopener">
+        <img class="cert-thumb" src="certs/ai-aware-cbse-intel.png" alt="AI Aware certificate, CBSE and Intel, AI For All program">
+        <div class="cert-caption">
+          <div class="issuer">CBSE &amp; Intel</div>
+          <div class="program">AI For All — Aware stage</div>
+        </div>
+      </a>
+      <a class="cert-card" href="certs/ai-appreciate-cbse-intel.png" target="_blank" rel="noopener">
+        <img class="cert-thumb" src="certs/ai-appreciate-cbse-intel.png" alt="AI Appreciate certificate, CBSE and Intel, AI For All program">
+        <div class="cert-caption">
+          <div class="issuer">CBSE &amp; Intel</div>
+          <div class="program">AI For All — Appreciate stage</div>
+        </div>
+      </a>
+      <a class="cert-card" href="certs/soar-ai-microsoft.png" target="_blank" rel="noopener">
+        <img class="cert-thumb" src="certs/soar-ai-microsoft.png" alt="SOAR AI for Educators certificate, Microsoft and Skill India">
+        <div class="cert-caption">
+          <div class="issuer">Microsoft &amp; Skill India</div>
+          <div class="program">SOAR — AI for Educators, NSQF Level 6</div>
+        </div>
+      </a>
+      <a class="cert-card" href="certs/gemini-certified-educator.png" target="_blank" rel="noopener">
+        <img class="cert-thumb" src="certs/gemini-certified-educator.png" alt="Gemini Certified Educator certificate, Google for Education">
+        <div class="cert-caption">
+          <div class="issuer">Google for Education</div>
+          <div class="program">Gemini Certified Educator</div>
+        </div>
+      </a>
     </div>
     <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:14px;">Also trained on Teachy, an AI planning tool for teachers, used live in every workshop.</p>
   </div>
@@ -302,9 +403,9 @@
 <section class="section who">
   <div class="wrap">
     <div class="section-label">Who I am</div>
-    <h2>Certified, but not here to lecture you.</h2>
-    <p>I run Classmiss on my own. I didn't come from a career teaching background — I built my AI skills deliberately, and I've since been certified by CBSE and Intel, Microsoft (through Skill India), and Google for Education in AI for teaching. Along the way I use these tools daily for my own work, not just to pass a test.</p>
-    <p>That's the whole idea behind Classmiss: I'm not here to lecture on AI theory. I'll show you exactly what I do, step by step, so you walk out with something you'll actually use in class the next day — not a slide deck you forget by Friday.</p>
+    <h2>A qualified teacher, now specialised in AI for the classroom.</h2>
+    <p>I hold an MA and B.Ed in English, and I've since been certified in AI for education by CBSE and Intel, Microsoft (through Skill India), and Google for Education. I use these tools daily for real work, not just to pass a certification.</p>
+    <p>That combination is the whole idea behind Classmiss: I understand the classroom because I was trained for it, and I understand the tools because I use them. I'm not here to lecture on AI theory — I'll show you exactly what I do, step by step, so you walk out with something you'll actually use in class the next day, not a slide deck you forget by Friday.</p>
     <div class="stat-row">
       <div class="stat"><div class="num">90 min</div><div class="label">per workshop session</div></div>
       <div class="stat"><div class="num">4</div><div class="label">ready-to-use AI skills covered</div></div>
@@ -331,17 +432,21 @@
           <p class="desc">Teachers learn to generate three difficulty levels of the same worksheet for mixed-ability classrooms.</p>
           <div class="prompt-box">
             <span class="prompt-label">Example prompt</span>
-            Create a grade 6 worksheet on fractions with 8 questions. Give three versions: easy, medium, and challenging. Include an answer key.
+            <span class="type-target" data-prompt="Create a grade 6 worksheet on fractions with 8 questions. Give three versions: easy, medium, and challenging. Include an answer key."></span><span class="type-cursor"></span>
           </div>
         </div>
         <div class="case-right">
           <div class="output-label">Output preview</div>
           <div class="mock-output worksheet">
-            <div class="q">1. Simplify 4/8 to its lowest terms.</div>
-            <div class="q">2. Which is larger: 3/5 or 5/8?</div>
-            <div class="q">3. A pizza is cut into 8 slices. Priya eats 3. What fraction is left?</div>
+            <div style="font-size:11px; font-weight:600; color:var(--sage); text-transform:uppercase; margin-bottom:4px;">Easy</div>
+            <div class="q">1. What is 1/2 + 1/4?</div>
+            <div style="font-size:11px; font-weight:600; color:var(--sage); text-transform:uppercase; margin:10px 0 4px;">Medium</div>
+            <div class="q">2. A ribbon is 3/4 m long, cut into 3 equal pieces. Length of each piece?</div>
+            <div style="font-size:11px; font-weight:600; color:var(--sage); text-transform:uppercase; margin:10px 0 4px;">Challenging</div>
+            <div class="q">3. Add 2/3 + 3/5, and express the answer in simplest form.</div>
+            <div style="font-size:11px; color:var(--muted); margin-top:10px;">+ 5 more questions, with a full answer key</div>
           </div>
-          <div class="disclaimer">Illustrative example — actual output varies by prompt and tool.</div>
+          <div class="disclaimer">Real output, generated for this page — not a screenshot, an actual usable worksheet.</div>
         </div>
       </div>
 
@@ -353,19 +458,23 @@
           <p class="desc">Paste in a textbook chapter and get a ready quiz with answer options, exportable to Google Forms.</p>
           <div class="prompt-box">
             <span class="prompt-label">Example prompt</span>
-            From this chapter on the water cycle, write 5 multiple-choice questions with 4 options each, mark the correct answer, and keep the language suitable for grade 5.
+            <span class="type-target" data-prompt="From this chapter on the water cycle, write 5 multiple-choice questions with 4 options each, mark the correct answer, and keep the language suitable for grade 5."></span><span class="type-cursor"></span>
           </div>
         </div>
         <div class="case-right">
           <div class="output-label">Output preview</div>
           <div class="mock-output quiz">
-            <div style="font-weight:600; margin-bottom:8px; font-size:13px;">Q3. What causes clouds to form?</div>
+            <div style="font-weight:600; margin-bottom:6px; font-size:13px;">Q1. What is evaporation?</div>
+            <div class="option"><span class="dot" style="background:var(--sage); border-color:var(--sage);"></span>Water turning into vapour due to heat</div>
+            <div class="option"><span class="dot"></span>Water falling as rain</div>
+            <div class="option"><span class="dot"></span>Water freezing into ice</div>
+            <div style="font-weight:600; margin:12px 0 6px; font-size:13px;">Q2. What causes clouds to form?</div>
             <div class="option"><span class="dot"></span>Evaporation of ocean water</div>
-            <div class="option"><span class="dot"></span>Condensation of water vapour</div>
+            <div class="option"><span class="dot" style="background:var(--sage); border-color:var(--sage);"></span>Condensation of water vapour</div>
             <div class="option"><span class="dot"></span>Melting of glaciers</div>
-            <div class="option"><span class="dot"></span>Rainfall collecting in rivers</div>
+            <div style="font-size:11px; color:var(--muted); margin-top:8px;">+ 3 more questions, answers marked</div>
           </div>
-          <div class="disclaimer">Illustrative example — actual output varies by prompt and tool.</div>
+          <div class="disclaimer">Real output, generated for this page — not a screenshot, an actual usable quiz.</div>
         </div>
       </div>
 
@@ -377,7 +486,7 @@
           <p class="desc">Teachers learn to convert a chapter or syllabus into a branching mind map students can revise from.</p>
           <div class="prompt-box">
             <span class="prompt-label">Example prompt</span>
-            Summarise this chapter on the Indian freedom movement as a mind map with one central topic and 5 branches, each with 2-3 sub-points.
+            <span class="type-target" data-prompt="Summarise this chapter on the Indian freedom movement as a mind map with one central topic and 5 branches, each with 2-3 sub-points."></span><span class="type-cursor"></span>
           </div>
         </div>
         <div class="case-right">
@@ -389,8 +498,9 @@
             <span class="mind-node">Major events</span>
             <span class="mind-node">Partition</span>
             <span class="mind-node">Independence</span>
+            <div style="font-size:11px; color:var(--muted); margin-top:10px; text-align:left;">Key leaders → Gandhi, Nehru, Bose, Patel &nbsp;·&nbsp; Major events → Non-Cooperation, Quit India, Dandi March</div>
           </div>
-          <div class="disclaimer">Illustrative example — actual output varies by prompt and tool.</div>
+          <div class="disclaimer">Real output, generated for this page — not a screenshot, an actual usable mind map.</div>
         </div>
       </div>
 
@@ -402,7 +512,7 @@
           <p class="desc">Teachers design a print-ready poster for their classroom wall without any design skills.</p>
           <div class="prompt-box">
             <span class="prompt-label">Example prompt</span>
-            Design an A3 classroom poster on the states of matter, with icons for solid, liquid and gas, and one line describing each.
+            <span class="type-target" data-prompt="Design an A3 classroom poster on the states of matter, with icons for solid, liquid and gas, and one line describing each."></span><span class="type-cursor"></span>
           </div>
         </div>
         <div class="case-right">
@@ -414,12 +524,7 @@
               <div class="info-row"><div class="info-icon"></div><div class="info-text"><strong>Gas</strong> — spreads to fill any space</div></div>
             </div>
           </div>
-          <div class="disclaimer">Illustrative example — actual output varies by prompt and tool.</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
+          <div class="disclaimer">Real output, generated for this page — not a screenshot, actual usable poster copy.</div>
 </section>
 
 <section class="section steps">
@@ -519,11 +624,73 @@
   <div class="wrap">
     <h2>Bring this workshop to your staff room.</h2>
     <p>One session, four practical AI skills, no technical background needed. Built and delivered by Classmiss.</p>
-    <a class="btn btn-primary" href="mailto:hello@classmiss.in">hello@classmiss.in</a>
+    <a class="btn btn-primary" href="mailto:Classmiss.i@gmail.com">Classmiss.i@gmail.com</a>
   </div>
 </section>
 
 <div class="footer-note">Classmiss.in — AI workshops for teachers</div>
+
+<a class="float-whatsapp" href="https://wa.me/919443699605?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Classmiss" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.36a9.9 9.9 0 0 0 4.62 1.15h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.64-1.03-5.13-2.9-7C17.17 3.03 14.68 2 12.04 2zm0 18.06c-1.5 0-2.98-.4-4.27-1.16l-.3-.18-3.19.8.85-3.1-.2-.32a8.03 8.03 0 0 1-1.24-4.29c0-4.44 3.62-8.06 8.07-8.06 2.15 0 4.17.84 5.69 2.36a7.99 7.99 0 0 1 2.36 5.7c0 4.44-3.62 8.06-7.77 8.05z"/></svg>
+</a>
+<div class="float-label">Chat on WhatsApp</div>
+
+<script>
+const prompts = [
+  "Create a grade 6 worksheet on fractions, easy to hard",
+  "Make a 5-question quiz on the water cycle for grade 5",
+  "Turn this chapter into a mind map with 5 branches",
+  "Design a poster on states of matter for my classroom",
+  "Write a lesson plan intro for photosynthesis, grade 7"
+];
+
+const twEl = document.getElementById('tw-text');
+let pIdx = 0, cIdx = 0, deleting = false;
+
+function typeLoop(){
+  const current = prompts[pIdx];
+  if(!deleting){
+    cIdx++;
+    twEl.textContent = current.slice(0, cIdx);
+    if(cIdx === current.length){
+      deleting = true;
+      setTimeout(typeLoop, 1600);
+      return;
+    }
+  } else {
+    cIdx--;
+    twEl.textContent = current.slice(0, cIdx);
+    if(cIdx === 0){
+      deleting = false;
+      pIdx = (pIdx + 1) % prompts.length;
+    }
+  }
+  setTimeout(typeLoop, deleting ? 25 : 35);
+}
+typeLoop();
+
+// Type out each example prompt when it scrolls into view
+const typeTargets = document.querySelectorAll('.type-target');
+function typeOne(el){
+  const full = el.dataset.prompt;
+  let i = 0;
+  el.textContent = '';
+  (function step(){
+    i++;
+    el.textContent = full.slice(0, i);
+    if(i < full.length) setTimeout(step, 14);
+  })();
+}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting && !entry.target.dataset.typed){
+      entry.target.dataset.typed = 'true';
+      typeOne(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+typeTargets.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
