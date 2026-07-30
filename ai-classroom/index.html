@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>AI Classroom — Free Interactive Teacher Training | ClassMiss</title>
+
+    <!-- Meta Descriptions & SEO -->
+    <meta name="description" content="Explore the free interactive ClassMiss AI Classroom. Master ChatGPT, prompt engineering, media tools, and lesson planning for modern teaching." />
+    <meta name="keywords" content="ai classroom, free ai course for teachers, classmiss ai, prompt engineering for teachers, teacher ai tools" />
+    <link rel="canonical" href="https://classmiss.in/ai-classroom/" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0f3cc9;
+            --primary-hover: #0a2885;
+            --bg-light: #f5f7fb;
+            --bg-hero: linear-gradient(135deg, #e7ebf8 0%, #ffffff 100%);
+            --text-dark: #141414;
+            --text-grey: #555555;
+            --border-color: #e0e0e0;
+            --badge-bg: #d0dcff;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Baloo 2', sans-serif; font-weight: 700; }
+
+        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--text-dark); }
+
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        nav a.active { color: var(--primary-blue); }
+
+        /* Hero Section */
+        .hero {
+            background: var(--bg-hero);
+            padding: 4.5rem 1rem 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: var(--badge-bg);
+            color: var(--primary-blue);
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-grey);
+            margin-bottom: 2rem;
+        }
+
+        /* Section Layouts */
+        .section { padding: 60px 0; }
+        .section-alt { background: var(--bg-light); padding: 60px 0; }
+        
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--primary-blue);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+        .section-head h2 { font-size: 32px; margin-bottom: 10px; }
+        .section-head p { color: var(--text-grey); font-size: 16px; }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+        }
+
+        .card-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            background: var(--badge-bg);
+            color: var(--primary-blue);
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            width: fit-content;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .feature-card h3 { font-size: 22px; margin-bottom: 10px; color: var(--text-dark); }
+        .feature-card p { font-size: 14px; color: var(--text-grey); margin-bottom: 20px; }
+        
+        .feature-list { list-style: none; margin-bottom: 24px; }
+        .feature-list li {
+            font-size: 13px;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .feature-list li:last-child { border-bottom: none; }
+        .bullet-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary-blue); flex-shrink: 0; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .btn-primary { background: var(--primary-blue); color: var(--white); }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-outline { border: 2px solid var(--primary-blue); color: var(--primary-blue); background: #fff; }
+        .btn-outline:hover { background: var(--primary-blue); color: var(--white); }
+
+        /* Footer */
+        .footer-cta {
+            background: #070e21;
+            color: var(--white);
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .footer-cta h2 { font-size: 28px; margin-bottom: 12px; }
+        .footer-cta p { opacity: 0.8; max-width: 480px; margin: 0 auto 28px; font-size: 15px; color: #b5b5b5; }
+
+        .footer-note {
+            background: #040814;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #b5b5b5;
+            border-top: 1px solid #1a233a;
+        }
+
+        /* Floating WhatsApp Button */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            z-index: 999;
+            text-decoration: none;
+            animation: pulse-wa 2.4s ease-in-out infinite;
+        }
+        .float-whatsapp svg { width: 28px; height: 28px; fill: #fff; }
+
+        @keyframes pulse-wa {
+            0%,100% { box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 0 rgba(37,211,102,0.5); }
+            50% { box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 10px rgba(37,211,102,0); }
+        }
+
+        .float-label {
+            position: fixed;
+            bottom: 38px;
+            right: 90px;
+            background: var(--text-dark);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            z-index: 998;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .float-whatsapp:hover + .float-label { opacity: 1; }
+
+        @media (max-width: 840px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="https://classmiss.in/" class="logo">Class<span>Miss</span></a>
+        <nav>
+            <a href="https://classmiss.in/">Home</a>
+            <a href="https://classmiss.in/ai-classroom/" class="active">AI Classroom</a>
+            <a href="https://classmiss.in/courses/">Courses</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="eyebrow">Interactive Learning Hub</span>
+            <h1>ClassMiss AI Classroom</h1>
+            <p>Hands-on AI skills designed specifically for teachers. Learn to prompt, automate lesson materials, and incorporate generative media in school workflows[cite: 5].</p>
+        </div>
+    </section>
+
+    <!-- Classroom Modules Section -->
+    <section class="section">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="section-label">Curriculum Outline</div>
+                <h2>Guided 4-Week AI Modules</h2>
+                <p>Master practical Artificial Intelligence concepts week-by-week with instant feedback and printable resources[cite: 5].</p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Module 1 -->
+                <div class="feature-card">
+                    <div>
+                        <span class="card-badge">WEEK 01</span>
+                        <h3>Prompt Engineering Basics</h3>
+                        <p>Learn how to formulate effective AI prompts to generate precise worksheets, lesson outlines, and quizzes tailored to state standards[cite: 5].</p>
+                        <ul class="feature-list">
+                            <li><span class="bullet-dot"></span>Understanding AI LLM Capabilities[cite: 5]</li>
+                            <li><span class="bullet-dot"></span>Role, Task &amp; Format Prompting[cite: 5]</li>
+                            <li><span class="bullet-dot"></span>Instant Quiz &amp; Rubric Generators[cite: 5]</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="feature-card">
+                    <div>
+                        <span class="card-badge">WEEK 02</span>
+                        <h3>Generative Visuals &amp; Media</h3>
+                        <p>Incorporate AI-generated diagrams, images, and short videos to keep students engaged and visual concepts simple[cite: 5].</p>
+                        <ul class="feature-list">
+                            <li><span class="bullet-dot"></span>Canva AI &amp; Visual Helpers[cite: 5, 6]</li>
+                            <li><span class="bullet-dot"></span>Creating Interactive Slides[cite: 5]</li>
+                            <li><span class="bullet-dot"></span>Media Preview Tools[cite: 5]</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="feature-card">
+                    <div>
+                        <span class="card-badge">WEEK 03</span>
+                        <h3>Automating Classroom Admin</h3>
+                        <p>Save 5+ hours every week by letting AI assist with parent emails, report comments, and administrative documentation[cite: 5, 6, 8].</p>
+                        <ul class="feature-list">
+                            <li><span class="bullet-dot"></span>Automated Student Feedback[cite: 5, 6]</li>
+                            <li><span class="bullet-dot"></span>Drafting Parent Communications[cite: 5]</li>
+                            <li><span class="bullet-dot"></span>Multi-Language Material Translation[cite: 5]</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="feature-card">
+                    <div>
+                        <span class="card-badge">WEEK 04</span>
+                        <h3>Ethics &amp; Verified Badge</h3>
+                        <p>Understand AI ethics in education, anti-plagiarism checks, and complete your project to receive your ClassMiss Badge[cite: 5].</p>
+                        <ul class="feature-list">
+                            <li><span class="bullet-dot"></span>Ethical AI Guidance for Students[cite: 5]</li>
+                            <li><span class="bullet-dot"></span>Practical Capstone Submission[cite: 5]</li>
+                            <li><span class="bullet-dot"></span>Earned ClassMiss Educator Badge[cite: 5]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="wrap">
+            <h2>Ready to Transform Your Classroom?</h2>
+            <p>Connect with our support team or explore certified courses to get started[cite: 6].</p>
+            <a class="btn btn-primary" href="https://classmiss.in/courses/">View All Courses</a>
+        </div>
+    </section>
+
+    <div class="footer-note">&copy; 2026 Classmiss.in — Services &amp; Courses for Teachers[cite: 6]</div>
+
+    <!-- Floating WhatsApp Button -->
+    <a class="float-whatsapp" href="https://wa.me/919443699605?text=Hi%2C%20I%20have%20a%20question%20about%20Classmiss%20AI%20Classroom" target="_blank" rel="noopener" aria-label="Support on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.36a9.9 9.9 0 0 0 4.62 1.15h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.64-1.03-5.13-2.9-7C17.17 3.03 14.68 2 12.04 2zm0 18.06c-1.5 0-2.98-.4-4.27-1.16l-.3-.18-3.19.8.85-3.1-.2-.32a8.03 8.03 0 0 1-1.24-4.29c0-4.44 3.62-8.06 8.07-8.06 2.15 0 4.17.84 5.69 2.36a7.99 7.99 0 0 1 2.36 5.7c0 4.44-3.62 8.06-7.77 8.05z"/></svg>
+    </a>
+    <div class="float-label">Teacher Support</div>
+
+</body>
+</html>
