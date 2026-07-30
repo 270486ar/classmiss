@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>AI Courses for Teachers — Government Recognized & Bootcamps | ClassMiss</title>
+
+    <!-- Meta Descriptions & SEO -->
+    <meta name="description" content="Explore ClassMiss AI training courses, including the Skill India Digital SOAR program, live school workshops, and teacher assist programs." />
+    <meta name="keywords" content="ai courses for teachers, skill india digital soar, teacher ai certification, classmiss courses, school ai workshop" />
+    <link rel="canonical" href="https://classmiss.in/courses/" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0f3cc9;
+            --primary-hover: #0a2885;
+            --bg-light: #f5f7fb;
+            --bg-hero: linear-gradient(135deg, #e7ebf8 0%, #ffffff 100%);
+            --text-dark: #141414;
+            --text-grey: #555555;
+            --border-color: #e0e0e0;
+            --badge-bg: #d0dcff;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Baloo 2', sans-serif; font-weight: 700; }
+
+        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--text-dark); }
+
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        nav a.active { color: var(--primary-blue); }
+
+        /* Hero Section */
+        .hero {
+            background: var(--bg-hero);
+            padding: 4.5rem 1rem 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: var(--badge-bg);
+            color: var(--primary-blue);
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-grey);
+            margin-bottom: 2rem;
+        }
+
+        /* Section Layouts */
+        .section { padding: 60px 0; }
+        .section-alt { background: var(--bg-light); padding: 60px 0; }
+        
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--primary-blue);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+        .section-head h2 { font-size: 32px; margin-bottom: 10px; }
+        .section-head p { color: var(--text-grey); font-size: 16px; }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+        }
+
+        .card-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            background: var(--badge-bg);
+            color: var(--primary-blue);
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            width: fit-content;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .feature-card h3 { font-size: 22px; margin-bottom: 10px; color: var(--text-dark); }
+        .feature-card p { font-size: 14px; color: var(--text-grey); margin-bottom: 20px; }
+        
+        .feature-list { list-style: none; margin-bottom: 24px; }
+        .feature-list li {
+            font-size: 13px;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .feature-list li:last-child { border-bottom: none; }
+        .bullet-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary-blue); flex-shrink: 0; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .btn-primary { background: var(--primary-blue); color: var(--white); }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-outline { border: 2px solid var(--primary-blue); color: var(--primary-blue); background: #fff; }
+        .btn-outline:hover { background: var(--primary-blue); color: var(--white); }
+
+        /* Footer */
+        .footer-cta {
+            background: #070e21;
+            color: var(--white);
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .footer-cta h2 { font-size: 28px; margin-bottom: 12px; }
+        .footer-cta p { opacity: 0.8; max-width: 480px; margin: 0 auto 28px; font-size: 15px; color: #b5b5b5; }
+
+        .footer-note {
+            background: #040814;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #b5b5b5;
+            border-top: 1px solid #1a233a;
+        }
+
+        /* Floating WhatsApp Button */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            z-index: 999;
+            text-decoration: none;
+            animation: pulse-wa 2.4s ease-in-out infinite;
+        }
+        .float-whatsapp svg { width: 28px; height: 28px; fill: #fff; }
+
+        @keyframes pulse-wa {
+            0%,100% { box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 0 rgba(37,211,102,0.5); }
+            50% { box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 10px rgba(37,211,102,0); }
+        }
+
+        .float-label {
+            position: fixed;
+            bottom: 38px;
+            right: 90px;
+            background: var(--text-dark);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            z-index: 998;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .float-whatsapp:hover + .float-label { opacity: 1; }
+
+        @media (max-width: 840px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="https://classmiss.in/" class="logo">Class<span>Miss</span></a>
+        <nav>
+            <a href="https://classmiss.in/">Home</a>
+            <a href="https://classmiss.in/ai-classroom/">AI Classroom</a>
+            <a href="https://classmiss.in/courses/" class="active">Courses</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="eyebrow">Certified AI Training</span>
+            <h1>Explore Educator Programs</h1>
+            <p>From government-backed certifications on Skill India Digital to live school bootcamps and custom resource creation[cite: 6, 8].</p>
+        </div>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="section">
+        <div class="wrap">
+            <div class="cards-grid">
+                <!-- Course 1 -->
+                <div class="feature-card">
+                    <div>
+                        <span class="card-badge">FREE GOVT PROGRAM</span>
+                        <h3>Skill India Digital (SOAR)</h3>
+                        <p>Official Skilling for AI Readiness course delivered via Skill India Digital Hub. Earn government-recognized certification[cite: 6].</p>
+                        <ul class="feature-list">
+                            <li><span class="bullet-dot"></span>Self-Paced Learning Modules[cite: 6]</li>
+                            <li><span class="bullet-dot"></span>Official Gov Certification[cite: 6]</li>
+                            <li><span class="bullet-dot"></span>Free Learner Registration[cite: 6]</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.skillindiadigital.gov.in/mobilizer/user/dashboard/scan?utm=VTJGc2RHVmtYMThDOWN6b0FadjNoaFBKTzc0WndGc1VZQ0F4MC9hRzZTN3M0ZHNSYmcyRks0ZWNLVVJGT0I0ektlT2ZWRGltQW5ZcTV2d2tyMEpsd0BxdUgvQVhaMXJaalNXaThNQ2l4SEYweVcyaks4Qmh4Njg5MnhnTWJhcEU1RGtuU0ZQeUcrbjN1ZzlsMVdiWk5Uekt3OERuOFY3K3kvci9mVnJ0aFZIVXFSeGV3YXByTzFHdUNSbDVLRFdMT0ZRVkI1d3Y1YllLbm5leXJPMnB6bmJ4RlVudUNuRmkzNTNaNCszNDk3dFBQRlNobzhlS2VZMnQ0OEhBKzVvQTRrRVJuV3dCUnhtZVNGRERUUm5CYTdNb1hkWFM3V3ZBQmhNUFcrUnExS2w1SlJyUCt4VUN1aThWSUpsVEU0TDg%3D" target="_blank" rel="noopener" class="btn btn-primary">Enroll Free</a>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="feature-card">
+                    <div>
+                        <span class="card-badge">CLASSMISS ACADEMY</span>
+                        <h3>AI Tools for Effective Teaching</h3>
+                        <p>Master practical prompt engineering, automated grading, and lesson planning tailored to CBSE, ICSE, and State curricula[cite: 6].</p>
+                        <ul class="feature-list">
+                            <li><span class="bullet-dot"></span>Lesson Planning Automations[cite: 6]</li>
+                            <li><span class="bullet-dot"></span>Canva AI Visual Design[cite: 6]</li>
+                            <li><span class="bullet-dot"></span>ClassMiss Verified Certificate[cite: 5]</li>
+                        </ul>
+                    </div>
+                    <a href="https://classmiss.in/ai-classroom/" class="btn btn-outline">Explore Classroom</a>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="feature-card">
+                    <div>
+                        <span class="card-badge">FOR SCHOOLS</span>
+                        <h3>Live Staff Workshop &amp; Assist</h3>
+                        <p>Book a 90-minute live bootcamp or request custom educational resources built for your institution[cite: 6, 8].</p>
+                        <ul class="feature-list">
+                            <li><span class="bullet-dot"></span>Interactive Live Demonstrations[cite: 6]</li>
+                            <li><span class="bullet-dot"></span>24-Hour Custom Resource Turnaround[cite: 8]</li>
+                            <li><span class="bullet-dot"></span>Direct WhatsApp Support[cite: 8]</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919443699605?text=Hi%2C%20I%20am%20interested%20in%20a%20school%20workshop" target="_blank" rel="noopener" class="btn btn-primary">Book Workshop</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="wrap">
+            <h2>Questions About Course Enrollment?</h2>
+            <p>Our team is available to assist teachers and school administrations[cite: 6, 8].</p>
+            <a class="btn btn-primary" href="mailto:Classmiss.in@gmail.com">Classmiss.in@gmail.com</a>
+        </div>
+    </section>
+
+    <div class="footer-note">&copy; 2026 Classmiss.in — Services &amp; Courses for Teachers[cite: 6]</div>
+
+    <!-- Floating WhatsApp Button -->
+    <a class="float-whatsapp" href="https://wa.me/919443699605?text=Hi%2C%20I%20have%20a%20question%20about%20Classmiss%20Courses" target="_blank" rel="noopener" aria-label="Support on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.36a9.9 9.9 0 0 0 4.62 1.15h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.64-1.03-5.13-2.9-7C17.17 3.03 14.68 2 12.04 2zm0 18.06c-1.5 0-2.98-.4-4.27-1.16l-.3-.18-3.19.8.85-3.1-.2-.32a8.03 8.03 0 0 1-1.24-4.29c0-4.44 3.62-8.06 8.07-8.06 2.15 0 4.17.84 5.69 2.36a7.99 7.99 0 0 1 2.36 5.7c0 4.44-3.62 8.06-7.77 8.05z"/></svg>
+    </a>
+    <div class="float-label">Teacher Support</div>
+
+</body>
+</html>
